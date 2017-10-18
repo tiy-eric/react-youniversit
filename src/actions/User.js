@@ -1,7 +1,7 @@
 import request from 'superagent';
 
-const baseUrl = 'http://localhost:8080';
-// const baseUrl = 'https://youniversity1.herokuapp.com'
+// const baseUrl = 'http://localhost:8080';
+const baseUrl = 'https://youniversity1.herokuapp.com'
 
 export function login(user) {
 
