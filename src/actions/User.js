@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const baseUrl = 'https://youniversity1.herokuapp.com';
+const baseUrl = 'http://localhost:8080';
 
 export function login(user) {
 
@@ -66,6 +66,30 @@ export function register(user) {
                 }
 
                 dispatch({ type: 'USER_REGISTERED', result: response.body });
+
+            }
+        )
+    }
+}
+
+export function updateUser(user) {
+    
+    return dispatch => {
+        request.put(`${baseUrl}/user`)
+        .set('Content-Type', 'application/json')
+        .withCredentials()
+        .send(user)
+        .end(
+            (error, response) => {
+                
+                if(error) {
+                    console.error("could not update user" + error);
+                    return;
+                }
+
+                localStorage.setItem("currentUser", JSON.stringify(response.body));
+
+                dispatch({ type: 'USER_UPDATED', result: response.body });
 
             }
         )
