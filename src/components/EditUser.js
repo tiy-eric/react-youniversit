@@ -63,7 +63,7 @@ class EditUser extends Component {
                 case "location":
                     var value = "";
                     for (var i = 0; i < input.length; i++) {
-                        console.log(input.length)
+                    
                         if (input[i].selected) {
                         value += input[i].value + ","
                         }
@@ -96,7 +96,6 @@ class EditUser extends Component {
 
   render() {
 
-    console.log(this.currentLocations)
     let statusMessage = "";
     if(this.props.updatedUser){
         statusMessage =  (
