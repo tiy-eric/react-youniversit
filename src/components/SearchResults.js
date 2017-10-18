@@ -59,8 +59,11 @@ class SearchResults extends Component {
     data = [];
 
     componentDidMount(){
-        let user = this.props.currentUser;
-        this.props.getSchools(user.preferences.location, user.preferences.major)
+        if(this.props.currentUser.id){
+            let user = this.props.currentUser;
+            this.props.getSchools(user.preferences.location, user.preferences.major)
+        }
+        
     }
 
     linkFormatter(cell, row) {
