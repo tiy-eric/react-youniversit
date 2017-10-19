@@ -66,22 +66,21 @@ class Home extends Component {
                     <Col lg={4}>
                         <img className="img-circle" src="/assets/images/apple.png" alt="Generic placeholder" width="140" height="140" />
                         <h2>Financial Aid</h2>
+                        {/* https://fafsa.ed.gov/ */}
                         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                        <p><Button bsStyle="primary" >More Information &raquo;</Button></p>
+                        <a href="https://fafsa.ed.gov/" target="_blank" className="btn btn-primary" > More Information &raquo;</a>
                     </Col>
                     <Col lg={4}>
                         <img className="img-circle" src="/assets/images/maps.jpg" alt="Generic placeholder" width="140" height="140" />
                         <h2>Top Campuses</h2>
-                        {/* https://www.bestcollegereviews.org/features/most-beautiful-college-campuses/ */}
                         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                        <p><Button bsStyle="primary" >More Information &raquo;</Button></p>
+                        <a href="https://www.bestcollegereviews.org/features/most-beautiful-college-campuses/" target="_blank" className="btn btn-primary" > More Information &raquo;</a>
                     </Col>
                     <Col lg={4}>
                         <img className="img-circle" src="/assets/images/studying.png" alt="Generic placeholder" width="140" height="140" />
                         <h2>Early Admissions</h2>
                         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                      {/* https://www.usnews.com/education/best-colleges/slideshows/10-things-to-know-about-college-early-admissions-programs */}
-                        <p><Button bsStyle="primary" >More Information &raquo;</Button></p>
+                        <a href="https://www.usnews.com/education/best-colleges/slideshows/10-things-to-know-about-college-early-admissions-programs " target="_blank" className="btn btn-primary" > More Information &raquo;</a>
                    
                     </Col>
                 </Row>
