@@ -96,3 +96,25 @@ export function updateUser(user) {
         )
     }
 }
+
+export function addSchoolToFavoriteList(listID, school) {
+    
+    return dispatch => {
+        request.post(`${baseUrl}/list/${listID}/add`)
+        .set('Content-Type', 'application/json')
+        .withCredentials()
+        .send(school)
+        .end(
+            (error, response) => {
+                
+                if(error) {
+                    console.error("could not add school to user's favorite list" + error);
+                    return;
+                }
+
+                dispatch({ type: 'FAVORITE_ADDED', result: response.body });
+
+            }
+        )
+    }
+}

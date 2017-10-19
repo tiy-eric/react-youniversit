@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { getSchools } from "../actions/School";
+import { addSchoolToFavoriteList} from "../actions/User"
 
 import SearchResults from '../components/SearchResults'
 
@@ -14,6 +15,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getSchools: (location, major) => {
       dispatch(getSchools(location, major))
+    },
+    addSchoolToFavoriteList: (listID, school) => {
+      dispatch(getSchools(listID, school))
     }
   }
 }
