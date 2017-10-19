@@ -109,11 +109,12 @@ class EditUser extends Component {
     return (
         <div className="container">
          
-            <Panel header="YOUniversity Update User" id="panel">
+            <Panel header="Update User" id="panel">
             
             {statusMessage}
             
             <form onSubmit={this.handleFormSubmit} id="edituser">
+                     <label><h4><b>User Information</b></h4> </label>
                 <input type="hidden" name="username" defaultValue={this.props.currentUser.username} />
                 <FieldGroup
                     className="form-field"
@@ -143,19 +144,35 @@ class EditUser extends Component {
                     name="password"
                 />
                 
-                <label>Major</label>
-                <div className="form-group">
-                    <select defaultValue={this.currentMajors} multiple="true" name="major">
+                <br />
+            <label><h4><b>Preferences</b></h4> </label>
+
+            <table>
+                <tr>
+                    <th><label>States (select one or more)</label></th>
+                    <th><label>Area of Study (select one)</label></th>
+                </tr>
+
+                <tr class="cells">
+                <td>
+                    <div className="form-group">
+                        <select multiple="true" name="major" id="selections">
                         {majors.map(this.renderOptions)}
-                    </select>
-                </div>
-        
-                <label>Location</label>
-                <div className="form-group">
-                    <select defaultValue={this.currentLocations} multiple="true" name="location">
+                        </select>
+                    </div>      
+            
+                </td>
+
+                <td>     
+                    <div className="form-group">
+                    <select multiple="true" name="location" id="selections">
                         {states.map(this.renderOptions)}
                     </select> 
-                </div>
+                    </div>
+                </td>
+                
+                </tr>
+            </table>
 
                 <Button  className="btn btn-default"type="submit" id="submit">Edit Profile</Button>
 
