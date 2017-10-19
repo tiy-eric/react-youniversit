@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
+import './Register.css';
+
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -104,9 +106,9 @@ class Register extends Component {
     
     return (
         <div className="container">
-            <Panel header="YOUniversity User Registration">
+            <Panel header="YOUniversity User Registration" id="panel">
 
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit} id="newuser">
 
                 <FieldGroup
                     className="form-field"
@@ -156,7 +158,7 @@ class Register extends Component {
                     </select> 
                 </div>
 
-                <Button  className="btn btn-default"type="submit">Create Profile</Button>
+                <Button  className="btn btn-default" type="submit" id="submit">Create Profile</Button>
 
                 </form>
             </Panel>

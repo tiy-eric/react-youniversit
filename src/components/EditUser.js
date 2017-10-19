@@ -4,6 +4,7 @@ import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel, Alert }
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
 import {Preferences} from '../models/Preferences'
+import './EditUser.css';
 
 //since we have a model the represents the preferences that need to be set
 //for each user, I use object.keys to get the properties on the object as an array for when 
@@ -107,10 +108,12 @@ class EditUser extends Component {
     
     return (
         <div className="container">
+         
+            <Panel header="YOUniversity Update User" id="panel">
+            
             {statusMessage}
-            <Panel header="YOUniversity Update User">
-
-                <form onSubmit={this.handleFormSubmit}>
+            
+            <form onSubmit={this.handleFormSubmit} id="edituser">
                 <input type="hidden" name="username" defaultValue={this.props.currentUser.username} />
                 <FieldGroup
                     className="form-field"
@@ -154,7 +157,7 @@ class EditUser extends Component {
                     </select> 
                 </div>
 
-                <Button  className="btn btn-default"type="submit">Create Profile</Button>
+                <Button  className="btn btn-default"type="submit" id="submit">Edit Profile</Button>
 
                 </form>
             </Panel>
