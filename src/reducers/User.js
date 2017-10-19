@@ -19,8 +19,13 @@ const user = (state = {}, action) => {
         case "USER_LOGOUT":
             newState.updatedUser = action.result;
             return newState;
+        case "USER_REFRESHED":
+            newState.refreshUser = action.result;
+            // newState.schoolList = action.result;
+            //may need to create new element to state for this but technically updating the user so may try to use existing state tool
+            return newState;
         case "FAVORITE_ADDED":
-            newState.updatedUser = action.result;
+            newState.addedSchool = action.result;
             // newState.schoolList = action.result;
             //may need to create new element to state for this but technically updating the user so may try to use existing state tool
             return newState;

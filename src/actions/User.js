@@ -111,8 +111,7 @@ export function addSchoolToFavoriteList(listID, school) {
                     console.error("could not add school to user's favorite list" + error);
                     return;
                 }
-                //localStorage.setItem("currentUser", JSON.stringify(response.body));
-                //will not need this
+
                 dispatch({ type: 'FAVORITE_ADDED', result: response.body });
 
             }
@@ -120,4 +119,25 @@ export function addSchoolToFavoriteList(listID, school) {
     }
 }
 
+export function refreshUser() {
+    
+    return dispatch => {
+        request.get(`${baseUrl}/user`)
+        .withCredentials()
+        .send()
+        .end(
+            (error, response) => {
+                
+                if(error) {
+                    console.error("could not update user" + error);
+                    return;
+                }
 
+                localStorage.setItem("currentUser", JSON.stringify(response.body));
+
+                dispatch({ type: 'USER_REFRESHED', result: response.body });
+
+            }
+        )
+    }
+}

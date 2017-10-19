@@ -32,6 +32,7 @@ class SearchResults extends Component {
             this.loadFavorites(this.user.schoolList.schools);
         }
         
+        
     }
 
     afterTabChanged() {
@@ -94,10 +95,7 @@ class SearchResults extends Component {
                 }
         }//create school item to pass to add method
         this.props.addSchoolToFavoriteList(userListID, schoolInfo);
-        this.user = this.props.currentUser;
-        this.props.updateUser(this.user);
-        //how to make sure this doesn't run until the user is updated?
-        this.loadFavorites(this.user.schoolList.schools);
+        
         alert (`Congrats ${this.props.currentUser.firstName}! ${schoolInfo.schoolName} has been added to your list!`)
         //isolate user name
         console.log(this.user);
@@ -130,6 +128,13 @@ class SearchResults extends Component {
 
 
     render() {
+
+        if(this.props.addedSchool){
+            console.log(this.props.addedSchool)
+            this.props.refreshUser();
+            this.loadFavorites(this.props.addedSchool.schools);
+        }
+            
         
         const getDegree = {
             0: 'Non-Degree-Granting',
@@ -184,7 +189,6 @@ class SearchResults extends Component {
             )
           
       
-          // return inside the if
           return (
               <div className="searchDashboard">
               <div className="preferences">
@@ -196,14 +200,14 @@ class SearchResults extends Component {
                   </div>
             <div className="container searchTable">
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
-                {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
+                <TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='name' dataSort width={"200"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='size' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
                 dataFormat={ this.formatFloat }>Size</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='location' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Location</TableHeaderColumn>
                 <TableHeaderColumn id="state" row='1' dataField='state' dataSort width={"80"} filter={ { type: 'TextFilter', delay: 400 } }>ST</TableHeaderColumn>
-                {<TableHeaderColumn row='1' dataField='admission' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Admission %</TableHeaderColumn>}
+                <TableHeaderColumn row='1' dataField='admission' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Admission %</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='highestDegree' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Highest Degree</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='schoolUrl' dataFormat={this.linkFormatter} dataSort filter={ { type: 'TextFilter', delay: 400 } }>School URL</TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='3'>School Cost Information</TableHeaderColumn>
