@@ -18,16 +18,18 @@ let userListSize="";
 
 class SearchResults extends Component {
     data = [];
-
+    user;
+    localFavorites = new Array(10);
 
     componentDidMount(){
         if(this.props.currentUser.id){
-            let user = this.props.currentUser;
+            this.user = this.props.currentUser;
             // console.log(user);
-            userListID = user.schoolList.id;
-            userListSize = user.schoolList.schools.length;
+            userListID = this.user.schoolList.id;
+            userListSize = this.user.schoolList.schools.length;
             // console.log(`list id ${userListID} and list size ${userListSize}`)
-            this.props.getSchools(user.preferences.location, user.preferences.major)
+            this.props.getSchools(this.user.preferences.location, this.user.preferences.major)
+            this.loadFavorites(this.user.schoolList.schools);
         }
         
     }
@@ -45,6 +47,27 @@ class SearchResults extends Component {
         //console.log(cell)
         return '<a href=schooldetails/'+cell+' target="_blank">Details</a>';
     }
+
+    loadFavorites(listFromUser) {
+        console.log("items sent to method")
+        console.log(listFromUser);
+        let sizeCheck = this.localFavorites.length-listFromUser.length;
+        console.log(sizeCheck);
+        for(let i = 0; i < listFromUser.length; i++)
+        {
+                this.localFavorites[i]=listFromUser[i].schoolName;
+        }
+        if(sizeCheck>0){
+            for(let j=0; j < sizeCheck; j++)
+            {
+                this.localFavorites[j+listFromUser.length] = "Favorite Not Assigned"
+            }
+        }
+        console.log(this.localFavorites)
+            
+    }
+    
+        
 
     onRowSelect = (row, isSelected, e, rowIndex) => {
         let rowStr = '';
@@ -71,6 +94,8 @@ class SearchResults extends Component {
                 }
         }//create school item to pass to add method
         this.props.addSchoolToFavoriteList(userListID, schoolInfo);
+        this.user = this.props.currentUser;
+        this.loadFavorites(this.user.schoolList.schools);
         alert (`Congrats ${this.props.currentUser.firstName}! ${schoolInfo.schoolName} has been added to your list!`)
         //update favorites list on favorites snapshot
       }
@@ -156,6 +181,14 @@ class SearchResults extends Component {
       
           // return inside the if
           return (
+              <div className="searchDashboard">
+              <div className="preferences">
+                  <h2 className="heading">Your Info </h2><br />
+                  <h3 className="itemTitle">Major: </h3>
+                  <h3 className="item">{this.user.preferences.major}</h3><br />
+                  <h3 className="itemTitle">State(s): </h3>
+                  <h3 className="item">{this.user.preferences.location}</h3>
+                  </div>
             <div className="container searchTable">
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
@@ -177,6 +210,24 @@ class SearchResults extends Component {
                 dataFormat={ this.formatFloat }>Avg Net</TableHeaderColumn>
               </BootstrapTable>
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
+            </div>
+            <div className="favorites">
+            <h2 className="heading">Top Ten</h2><br />
+
+            <ol className = "topTen">
+                <li>{this.localFavorites[0]}</li>
+                <li>{this.localFavorites[1]}</li>
+                <li>{this.localFavorites[2]}</li>
+                <li>{this.localFavorites[3]}</li>
+                <li>{this.localFavorites[4]}</li>
+                <li>{this.localFavorites[5]}</li>
+                <li>{this.localFavorites[6]}</li>
+                <li>{this.localFavorites[7]}</li>
+                <li>{this.localFavorites[8]}</li>
+                <li>{this.localFavorites[9]}</li>
+            </ol>
+   
+            </div>
             </div>
       
           );
