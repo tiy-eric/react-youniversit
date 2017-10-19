@@ -44,7 +44,7 @@ export function logout() {
                 
                 localStorage.removeItem("currentUser");
 
-                dispatch({ type: 'USER_LOGOUT' });
+                dispatch({ type: 'USER_LOGOUT', result: response.body });
 
             }
         )

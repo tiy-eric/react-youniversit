@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 #carousel-college {
     text-align: center;
-    height: 700px;
-    margin-bottom: 70px
+    height: 850px;
+    margin-top: 0;
+    margin-bottom: 70px;
+    overflow: hidden;
 }
 
 #carousel-college img {
-    width: 100%;
-    height: 900px
+    min-height: 100%;
+    min-width: 100%;
+    margin-top: 0;
+     
 }
 
 .caption {
@@ -54,6 +58,6 @@
 } */
 
 #marketing {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 250px;
+    margin-bottom: 200px;
 }
