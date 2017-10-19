@@ -1,0 +1,66 @@
+
+
+#edituser {
+    display: grid;
+    padding: 1em;
+    background: #9eccc6;
+    border: 1px solid #c1c1c1;
+    margin: 2rem auto 0 auto;
+    max-width: 600px;
+    padding: 1em;
+}
+
+form input {
+    background: #fff;
+    border: 1px solid #9c9c9c;
+    width: 100%;
+}
+/* 
+#backbutton {
+    background: #47558b;
+}
+
+#backbutton:hover {
+    background: #427982;
+} */
+
+#submit {
+    background: #47558b;
+    padding: 0.7em;
+    width: 100%;
+    border: 0;
+    color: white;
+}
+
+#submit:hover {
+    background: #427982;
+}
+
+label {
+    padding: 0.5em 0.5em 0.5em 0;
+}
+
+input {
+    padding: 0.7em;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+input:focus {
+    outline: 3px solid yellow;
+    width: 100%;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th,
+tr {
+    width: 50%;
+}
+
+#panel {
+    margin-top: 50px;
+}
