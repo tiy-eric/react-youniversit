@@ -32,6 +32,10 @@ class SearchResults extends Component {
         
     }
 
+    afterTabChanged() {
+        this.refs.searchResultTable.forceUpdate();
+    }
+
     linkFormatter(cell, row) {
         //console.log(cell)
         return '<a href="http://'+cell+'" target="_blank">'+cell+'</a>';
@@ -42,7 +46,7 @@ class SearchResults extends Component {
         return '<a href=schooldetails/'+cell+' target="_blank">Details</a>';
     }
 
-    onRowSelect(row, isSelected, e, rowIndex) {
+    onRowSelect = (row, isSelected, e, rowIndex) => {
         let rowStr = '';
         let schoolInfo = new School();
         
@@ -69,7 +73,7 @@ class SearchResults extends Component {
         //get user list ID number
         console.log(`List ID: ${userListID} School Info: ${schoolInfo.schoolName} List Size: ${userListSize}`)
         console.log(this.props);//undefined props
-        this.props.addSchoolToFavoritesList(this.userListID, schoolInfo);
+        this.props.addSchoolToFavoriteList(userListID, schoolInfo);
       }
 
       onSelectAll(isSelected, rows) {
@@ -154,8 +158,7 @@ class SearchResults extends Component {
           // return inside the if
           return (
             <div className="container searchTable">
-            {/* <div className="searchTable"> */}
-              <BootstrapTable data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
+              <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
                 <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='name' dataSort width={"300"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
