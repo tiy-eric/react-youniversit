@@ -148,31 +148,32 @@ class EditUser extends Component {
             <label><h4><b>Preferences</b></h4> </label>
 
             <table>
-                <tr>
-                    <th><label>States (select one or more)</label></th>
-                    <th><label>Area of Study (select one)</label></th>
-                </tr>
+            <tr>
+                <th><label>States (select one or more)</label></th>
+                <th><label>Area of Study (select one)</label></th>
+            </tr>
 
-                <tr class="cells">
-                <td>
-                    <div className="form-group">
-                        <select multiple="true" name="major" id="selections">
-                        {majors.map(this.renderOptions)}
-                        </select>
-                    </div>      
+            <tr class="cells">
+             <td>     
+                <div className="form-group">
+                <select defaultValue={this.currentLocations} multiple="true" name="location" id="selections">
+                    {states.map(this.renderOptions)}
+                </select> 
+                </div>
+              </td>
+              <td>
+                <div className="form-group">
+                   <select defaultValue={this.currentMajors} multiple="true" name="location" id="selections">
+                    {majors.map(this.renderOptions)}
+                    </select>
+                </div>      
+           
+              </td>
+
+       
             
-                </td>
-
-                <td>     
-                    <div className="form-group">
-                    <select multiple="true" name="location" id="selections">
-                        {states.map(this.renderOptions)}
-                    </select> 
-                    </div>
-                </td>
-                
-                </tr>
-            </table>
+              </tr>
+        </table>
 
                 <Button  className="btn btn-default"type="submit" id="submit">Edit Profile</Button>
 
