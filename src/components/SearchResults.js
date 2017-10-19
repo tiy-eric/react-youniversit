@@ -23,7 +23,7 @@ class SearchResults extends Component {
     componentDidMount(){
         if(this.props.currentUser.id){
             let user = this.props.currentUser;
-            console.log(user);
+            // console.log(user);
             userListID = user.schoolList.id;
             userListSize = user.schoolList.schools.length;
             // console.log(`list id ${userListID} and list size ${userListSize}`)
@@ -70,10 +70,9 @@ class SearchResults extends Component {
                     case 'rank':{schoolInfo.rank = row[prop]} break;
                 }
         }//create school item to pass to add method
-        //get user list ID number
-        console.log(`List ID: ${userListID} School Info: ${schoolInfo.schoolName} List Size: ${userListSize}`)
-        console.log(this.props);//undefined props
         this.props.addSchoolToFavoriteList(userListID, schoolInfo);
+        alert (`Congrats ${this.props.currentUser.firstName}! ${schoolInfo.schoolName} has been added to your list!`)
+        //update favorites list on favorites snapshot
       }
 
       onSelectAll(isSelected, rows) {
