@@ -19,7 +19,7 @@ let userListSize="";
 class SearchResults extends Component {
     data = [];
     user;
-    localFavorites = new Array(10);
+    localFavorites = new Array(0);
 
     componentDidMount(){
         if(this.props.currentUser.id){
@@ -52,19 +52,19 @@ class SearchResults extends Component {
     loadFavorites(listFromUser) {
         // console.log("items sent to method")
         // console.log(listFromUser);
-        let sizeCheck = this.localFavorites.length-listFromUser.length;
+        //let sizeCheck = this.localFavorites.length-listFromUser.length;
         // console.log(sizeCheck);
         for(let i = 0; i < listFromUser.length; i++)
         {
                 this.localFavorites[i]=listFromUser[i].schoolName;
         }
-        if(sizeCheck>0){
-            for(let j=0; j < sizeCheck; j++)
-            {
-                this.localFavorites[j+listFromUser.length] = "Favorite Not Assigned"
-            }
-        }
-        // console.log(this.localFavorites)
+        // if(sizeCheck>0){
+        //     for(let j=0; j < sizeCheck; j++)
+        //     {
+        //         this.localFavorites[j+listFromUser.length] = "Favorite Not Assigned"
+        //     }
+        // }
+        console.log(this.localFavorites)
         
     }
     
@@ -128,6 +128,10 @@ class SearchResults extends Component {
 
 
     render() {
+        let favorites = this.localFavorites.map(function(value, key){
+            return <li key={key}>{value}</li>;
+        })
+        console.log(favorites)
 
         if(this.props.addedSchool){
             console.log(this.props.addedSchool)
@@ -224,16 +228,7 @@ class SearchResults extends Component {
             <h2 className="heading"><a href="http://www.google.com">Top Ten</a></h2><br />
 
             <ol className = "topTen">
-                <li>{this.localFavorites[0]}</li>
-                <li>{this.localFavorites[1]}</li>
-                <li>{this.localFavorites[2]}</li>
-                <li>{this.localFavorites[3]}</li>
-                <li>{this.localFavorites[4]}</li>
-                <li>{this.localFavorites[5]}</li>
-                <li>{this.localFavorites[6]}</li>
-                <li>{this.localFavorites[7]}</li>
-                <li>{this.localFavorites[8]}</li>
-                <li>{this.localFavorites[9]}</li>
+              {favorites}
             </ol>
    
             </div>
