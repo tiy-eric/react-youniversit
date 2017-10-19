@@ -111,7 +111,8 @@ export function addSchoolToFavoriteList(listID, school) {
                     console.error("could not add school to user's favorite list" + error);
                     return;
                 }
-
+                localStorage.setItem("currentUser", JSON.stringify(response.body));
+                //will not need this
                 dispatch({ type: 'FAVORITE_ADDED', result: response.body });
 
             }

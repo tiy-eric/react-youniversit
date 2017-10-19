@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(getSchools(location, major))
     },
     addSchoolToFavoriteList: (listID, school) => {
-      dispatch(getSchools(listID, school))
+      dispatch(addSchoolToFavoriteList(listID, school))
     }
   }
 }
