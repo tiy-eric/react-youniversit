@@ -155,6 +155,13 @@ class Register extends Component {
             </tr>
 
             <tr class="cells">
+             <td>     
+                <div className="form-group">
+                <select multiple="true" name="location" id="selections">
+                    {states.map(this.renderOptions)}
+                </select> 
+                </div>
+              </td>
               <td>
                 <div className="form-group">
                     <select multiple="true" name="major" id="selections">
@@ -164,13 +171,7 @@ class Register extends Component {
            
               </td>
 
-              <td>     
-                <div className="form-group">
-                <select multiple="true" name="location" id="selections">
-                    {states.map(this.renderOptions)}
-                </select> 
-                </div>
-              </td>
+       
             
               </tr>
         </table>
