@@ -61,3 +61,21 @@
     margin-top: 250px;
     margin-bottom: 200px;
 }
+
+.intro {
+    flex: 1 100%;
+}
+
+
+.bigLogoText {
+    font-family: 'Graduate', cursive;
+    font-size: 50px;
+  flex: 1;
+}
+
+.logoText {
+    font-family: 'Graduate', cursive;
+    font-size: 65px;
+    display: inline;
+}
+

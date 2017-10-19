@@ -27,9 +27,11 @@ class Home extends Component {
                     <img src="/assets/images/2_graduates.jpg" alt="graduates"/>
                     
                     <Carousel.Caption className="caption">
-                        <h2>Welcome to</h2>
-                        <h1>YOUniversity</h1>
-                        <h2><i>Your Academic Adventure Starts Here</i></h2>
+                        <div className="intro">
+                            <h2 className = "welcome">Welcome to</h2>
+                            <h1 className="bigLogoText">YOU<div className="logoText">niversity</div></h1>
+                            <h2 className="subtitle"><i>Your Academic Adventure Starts Here</i></h2>
+                        </div>
                     </Carousel.Caption>
                 
                 </Carousel.Item>
@@ -37,17 +39,21 @@ class Home extends Component {
                 <Carousel.Item>
                     <img src="/assets/images/3_path.jpg" alt="school view"/>
                     <Carousel.Caption className="caption">
-                        <h2>Welcome to</h2>
-                        <h1>YOUniversity</h1>
-                        <h2><i>Your Academic Adventure Starts Here</i></h2>
+                        <div className="intro">
+                            <h2 className = "welcome">Welcome to</h2>
+                            <h1 className="bigLogoText">YOU<div className="logoText">niversity</div></h1>
+                            <h2 className="subtitle"><i>Your Academic Adventure Starts Here</i></h2>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img src="/assets/images/5_school.jpg" alt="school"/>
                     <Carousel.Caption className="caption">
-                        <h2>Welcome to</h2>
-                        <h1>YOUniversity</h1>
-                        <h2><i>Your Academic Adventure Starts Here</i></h2>
+                        <div className="intro">
+                            <h2 className = "welcome">Welcome to</h2>
+                            <h1 className="bigLogoText">YOU<div className="logoText">niversity</div></h1>
+                            <h2 className="subtitle"><i>Your Academic Adventure Starts Here</i></h2>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
