@@ -148,7 +148,7 @@ class Register extends Component {
 <br />
         <label><h4><b>Preferences</b></h4> </label>
 
-          <table>
+          {/* <table>
             <tr>
                 <th><label>States (select one or more)</label></th>
                 <th><label>Area of Study (select one)</label></th>
@@ -157,14 +157,14 @@ class Register extends Component {
             <tr class="cells">
              <td>     
                 <div className="form-group">
-                <select multiple="true" name="location" id="selections">
+                <select multiple="true" name="location" className="selections">
                     {states.map(this.renderOptions)}
                 </select> 
                 </div>
               </td>
               <td>
                 <div className="form-group">
-                    <select multiple="true" name="major" id="selections">
+                    <select multiple="true" name="major" className="selections">
                     {majors.map(this.renderOptions)}
                     </select>
                 </div>      
@@ -174,25 +174,22 @@ class Register extends Component {
        
             
               </tr>
-        </table>
+        </table> */}
 
 
-{/* 
-
-
-                <label>Major</label>
+            <label>Major</label>
                 <div className="form-group">
-                    <select multiple="true" name="major" id="majorselections">
-                    {majors.map(this.renderOptions)}
+                    <select defaultValue={this.currentMajors} multiple="true" name="major">
+                        {majors.map(this.renderOptions)}
                     </select>
                 </div>
         
                 <label>Location</label>
                 <div className="form-group">
-                <select multiple="true" name="location">
-                    {states.map(this.renderOptions)}
+                    <select defaultValue={this.currentLocations} multiple="true" name="location">
+                        {states.map(this.renderOptions)}
                     </select> 
-                </div> */}
+                </div>
 
                 <Button  className="btn btn-default" type="submit" id="submit">Create Profile</Button>
 
