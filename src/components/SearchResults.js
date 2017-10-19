@@ -49,10 +49,10 @@ class SearchResults extends Component {
     }
 
     loadFavorites(listFromUser) {
-        console.log("items sent to method")
-        console.log(listFromUser);
+        // console.log("items sent to method")
+        // console.log(listFromUser);
         let sizeCheck = this.localFavorites.length-listFromUser.length;
-        console.log(sizeCheck);
+        // console.log(sizeCheck);
         for(let i = 0; i < listFromUser.length; i++)
         {
                 this.localFavorites[i]=listFromUser[i].schoolName;
@@ -63,8 +63,8 @@ class SearchResults extends Component {
                 this.localFavorites[j+listFromUser.length] = "Favorite Not Assigned"
             }
         }
-        console.log(this.localFavorites)
-            
+        // console.log(this.localFavorites)
+        
     }
     
         
@@ -95,8 +95,13 @@ class SearchResults extends Component {
         }//create school item to pass to add method
         this.props.addSchoolToFavoriteList(userListID, schoolInfo);
         this.user = this.props.currentUser;
+        this.props.updateUser(this.user);
+        //how to make sure this doesn't run until the user is updated?
         this.loadFavorites(this.user.schoolList.schools);
         alert (`Congrats ${this.props.currentUser.firstName}! ${schoolInfo.schoolName} has been added to your list!`)
+        //isolate user name
+        console.log(this.user);
+        
         //update favorites list on favorites snapshot
       }
 
@@ -193,7 +198,7 @@ class SearchResults extends Component {
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
                 <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='name' dataSort width={"300"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
+                <TableHeaderColumn row='1' dataField='name' dataSort width={"200"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='size' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
                 dataFormat={ this.formatFloat }>Size</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='location' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Location</TableHeaderColumn>
@@ -212,7 +217,7 @@ class SearchResults extends Component {
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>
             <div className="favorites">
-            <h2 className="heading">Top Ten</h2><br />
+            <h2 className="heading"><a href="http://www.google.com">Top Ten</a></h2><br />
 
             <ol className = "topTen">
                 <li>{this.localFavorites[0]}</li>
