@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { NavItem, Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { Link, browserHistory } from 'react-router';
 
 import {User} from '../models/User'
@@ -32,9 +32,17 @@ class NavLogin extends Component {
           let user = this.props.currentUser;
   
           return (
-            <Navbar.Text pullRight>
-              Signed in as: {user.firstName} {user.lastName} (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
-            </Navbar.Text>
+              <div>
+                <Navbar.Brand>
+                    <Link to="/searchresults">SearchResults</Link>
+                </Navbar.Brand>
+                <Navbar.Brand>
+                    <Link to="/edituser">Edit Preferences</Link>
+                </Navbar.Brand>
+                <Navbar.Text pullRight>
+                    Signed in as: {user.firstName} {user.lastName} (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
+                </Navbar.Text>
+            </div>
           )
   
         }
