@@ -13,6 +13,12 @@ const user = (state = {}, action) => {
         case "USER_UPDATED":
             newState.updatedUser = action.result;
             return newState;
+        case "USER_LOGIN":
+            newState.updatedUser = action.result;
+            return newState;
+        case "USER_LOGOUT":
+            newState.updatedUser = action.result;
+            return newState;
         case "FAVORITE_ADDED":
             newState.updatedUser = action.result;
             // newState.schoolList = action.result;
