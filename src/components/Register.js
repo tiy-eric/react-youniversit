@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
+import './Register.css';
+
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -104,9 +106,10 @@ class Register extends Component {
     
     return (
         <div className="container">
-            <Panel header="YOUniversity User Registration">
+            <Panel header="User Registration" id="panel">
 
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit} id="newuser">
+                <label><h4><b>User Information</b></h4> </label>
 
                 <FieldGroup
                     className="form-field"
@@ -142,9 +145,44 @@ class Register extends Component {
                     name="password"
                 />
                 
+<br />
+        <label><h4><b>Preferences</b></h4> </label>
+
+          <table>
+            <tr>
+                <th><label>States (select one or more)</label></th>
+                <th><label>Area of Study (select one)</label></th>
+            </tr>
+
+            <tr class="cells">
+             <td>     
+                <div className="form-group">
+                <select multiple="true" name="location" id="selections">
+                    {states.map(this.renderOptions)}
+                </select> 
+                </div>
+              </td>
+              <td>
+                <div className="form-group">
+                    <select multiple="true" name="major" id="selections">
+                    {majors.map(this.renderOptions)}
+                    </select>
+                </div>      
+           
+              </td>
+
+       
+            
+              </tr>
+        </table>
+
+
+{/* 
+
+
                 <label>Major</label>
                 <div className="form-group">
-                    <select multiple="true" name="major">
+                    <select multiple="true" name="major" id="majorselections">
                     {majors.map(this.renderOptions)}
                     </select>
                 </div>
@@ -154,9 +192,9 @@ class Register extends Component {
                 <select multiple="true" name="location">
                     {states.map(this.renderOptions)}
                     </select> 
-                </div>
+                </div> */}
 
-                <Button  className="btn btn-default"type="submit">Create Profile</Button>
+                <Button  className="btn btn-default" type="submit" id="submit">Create Profile</Button>
 
                 </form>
             </Panel>

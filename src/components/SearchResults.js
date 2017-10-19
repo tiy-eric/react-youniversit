@@ -3,67 +3,37 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
 import { Link } from 'react-router';
 import { School } from '../models/School'
+import './SearchResults.css';
 
-function onRowSelect(row, isSelected, e, rowIndex) {
-    let rowStr = '';
-    let schoolInfo = new School();
-    
-    for (const prop in row) {
-      rowStr += prop + ': "' + row[prop] + '"';
-      switch(prop){
-        
-                case 'id': {schoolInfo.schoolApiId = row[prop] } break;
-                case 'name':{schoolInfo.schoolName = row[prop]} break;
-                case 'netCost':{schoolInfo.avgNet = row[prop]} break;
-                case 'inState':{schoolInfo.inState = row[prop]} break;
-                case 'outState':{schoolInfo.outState = row[prop]} break;
-                case 'location':{schoolInfo.schoolLocation = row[prop]} break;
-                case 'size':{schoolInfo.size = row[prop]} break;
-                case 'state':{schoolInfo.state = row[prop]} break;
-                case 'admission':{schoolInfo.admission = row[prop]} break;
-                case 'ownership':{schoolInfo.ownership = row[prop]} break;
-                case 'highestDegree':{schoolInfo.highestDegree = row[prop]} break;
-                case 'schoolUrl':{schoolInfo.schoolUrl = row[prop]} break;
-                case 'comment':{schoolInfo.comment = row[prop]} break;
-                case 'rank':{schoolInfo.rank = row[prop]} break;
-            }
-    }
-    
-  }
+let userListID="";
+let userListSize="";
+
   
   
-function onSelectAll(isSelected, rows) {
-    alert(`is select all: ${isSelected}`);
-    if (isSelected) {
-        alert('Current display and selected data: ');
-    } else {
-        alert('unselect rows: ');
-    }
-    for (let i = 0; i < rows.length; i++) {
-        alert(rows[i].id);
-    }
-}
 
-const selectRowProp = {
-    mode: 'checkbox',
-    // clickToSelect: true, --> use this for favorite list to pull up details. this will allow you to click row to select it.
-    onSelect: onRowSelect,
-    onSelectAll: onSelectAll
-};
 
-function formatFloat(cell, row) {
-    return parseFloat(cell);
-}
+
+
+
 
 class SearchResults extends Component {
     data = [];
 
+
     componentDidMount(){
         if(this.props.currentUser.id){
             let user = this.props.currentUser;
+            // console.log(user);
+            userListID = user.schoolList.id;
+            userListSize = user.schoolList.schools.length;
+            // console.log(`list id ${userListID} and list size ${userListSize}`)
             this.props.getSchools(user.preferences.location, user.preferences.major)
         }
         
+    }
+
+    afterTabChanged() {
+        this.refs.searchResultTable.forceUpdate();
     }
 
     linkFormatter(cell, row) {
@@ -76,8 +46,61 @@ class SearchResults extends Component {
         return '<a href=schooldetails/'+cell+' target="_blank">Details</a>';
     }
 
-    render() {
+    onRowSelect = (row, isSelected, e, rowIndex) => {
+        let rowStr = '';
+        let schoolInfo = new School();
+        
+        for (const prop in row) {
+          rowStr += prop + ': "' + row[prop] + '"';
+          switch(prop){
+            
+                    case 'id': {schoolInfo.schoolApiId = row[prop] } break;
+                    case 'name':{schoolInfo.schoolName = row[prop]} break;
+                    case 'netCost':{schoolInfo.avgNet = row[prop]} break;
+                    case 'inState':{schoolInfo.inState = row[prop]} break;
+                    case 'outState':{schoolInfo.outState = row[prop]} break;
+                    case 'location':{schoolInfo.schoolLocation = row[prop]} break;
+                    case 'size':{schoolInfo.size = row[prop]} break;
+                    case 'state':{schoolInfo.state = row[prop]} break;
+                    case 'admission':{schoolInfo.admission = row[prop]} break;
+                    case 'ownership':{schoolInfo.ownership = row[prop]} break;
+                    case 'highestDegree':{schoolInfo.highestDegree = row[prop]} break;
+                    case 'schoolUrl':{schoolInfo.schoolUrl = row[prop]} break;
+                    case 'comment':{schoolInfo.comment = row[prop]} break;
+                    case 'rank':{schoolInfo.rank = row[prop]} break;
+                }
+        }//create school item to pass to add method
+        this.props.addSchoolToFavoriteList(userListID, schoolInfo);
+        alert (`Congrats ${this.props.currentUser.firstName}! ${schoolInfo.schoolName} has been added to your list!`)
+        //update favorites list on favorites snapshot
+      }
 
+      onSelectAll(isSelected, rows) {
+        alert(`is select all: ${isSelected}`);
+        if (isSelected) {
+            alert('Current display and selected data: ');
+        } else {
+            alert('unselect rows: ');
+        }
+        for (let i = 0; i < rows.length; i++) {
+            alert(rows[i].id);
+        }
+    }
+
+    formatFloat(cell, row) {
+        return parseFloat(cell);
+    }
+
+    selectRowProp = {
+        mode: 'checkbox',
+        // clickToSelect: true, --> use this for favorite list to pull up details. this will allow you to click row to select it.
+        onSelect: this.onRowSelect,
+        onSelectAll: this.onSelectAll
+    };
+
+
+    render() {
+        
         const getDegree = {
             0: 'Non-Degree-Granting',
             1: 'Certificate',
@@ -107,7 +130,7 @@ class SearchResults extends Component {
             43:"Rural: Remote"
         }
 
-        if(this.props.searchResults){
+        if(this.props.searchResults && Array.isArray(this.props.searchResults)){
             this.data = this.props.searchResults.map(
               school => {
                 let temp = parseInt(school['2015.cost.avg_net_price.public'])
@@ -133,14 +156,13 @@ class SearchResults extends Component {
       
           // return inside the if
           return (
-            
-            <div className="container">
-              <BootstrapTable data={ this.data } selectRow={ selectRowProp } search exportCSV={ true } pagination striped>
+            <div className="container searchTable">
+              <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
                 <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='name' dataSort width={"300"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='size' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ formatFloat }>Size</TableHeaderColumn>
+                dataFormat={ this.formatFloat }>Size</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='location' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Location</TableHeaderColumn>
                 <TableHeaderColumn id="state" row='1' dataField='state' dataSort width={"80"} filter={ { type: 'TextFilter', delay: 400 } }>ST</TableHeaderColumn>
                 {<TableHeaderColumn row='1' dataField='admission' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Admission %</TableHeaderColumn>}
@@ -148,11 +170,11 @@ class SearchResults extends Component {
                 <TableHeaderColumn row='1' dataField='schoolUrl' dataFormat={this.linkFormatter} dataSort filter={ { type: 'TextFilter', delay: 400 } }>School URL</TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='3'>School Cost Information</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='inState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ formatFloat }>In-State</TableHeaderColumn>
+                dataFormat={ this.formatFloat }>In-State</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='outState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ formatFloat }>Out-of-State</TableHeaderColumn>
+                dataFormat={ this.formatFloat }>Out-of-State</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='netCost' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ formatFloat }>Avg Net</TableHeaderColumn>
+                dataFormat={ this.formatFloat }>Avg Net</TableHeaderColumn>
               </BootstrapTable>
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>
