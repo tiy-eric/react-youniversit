@@ -1,7 +1,7 @@
 import request from 'superagent';
 
-const baseUrl = 'http://localhost:8080';
-// const baseUrl = 'https://youniversity1.herokuapp.com'
+// const baseUrl = 'http://localhost:8080';
+const baseUrl = 'https://youniversity1.herokuapp.com'
 
 export function login(user) {
 
@@ -44,7 +44,7 @@ export function logout() {
                 
                 localStorage.removeItem("currentUser");
 
-                dispatch({ type: 'USER_LOGOUT' });
+                dispatch({ type: 'USER_LOGOUT', result: response.body });
 
             }
         )
