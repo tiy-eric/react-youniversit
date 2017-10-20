@@ -40,6 +40,9 @@ class NavLogin extends Component {
                 <Navbar.Brand>
                     <Link className="linkText" to="/edituser">Edit Preferences</Link>
                 </Navbar.Brand>
+                <Navbar.Brand>
+                    <Link to="/favoritelist">Favorites</Link>
+                </Navbar.Brand>
                 <Navbar.Text pullRight>
                     Signed in as: {user.firstName} {user.lastName} (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
                 </Navbar.Text>

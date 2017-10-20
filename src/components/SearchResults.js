@@ -19,6 +19,7 @@ let userListSize="";
 class SearchResults extends Component {
     data = [];
     user;
+
     localFavorites = new Array(0);
 
     componentDidMount(){

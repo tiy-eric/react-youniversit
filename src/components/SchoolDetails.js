@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col } from 'react-bootstrap';
 import "./SchoolDetails.css";
+
 class SchoolDetails extends Component {
 
 componentDidMount() {
@@ -53,9 +54,10 @@ componentDidMount() {
         43:"Rural: Remote (rural territory more than 25 miles from an urbanized area and more than 10 miles from an urban cluster)"
       }
 
-      console.log(`this.props.schooldetails is ${JSON.stringify(this.props.schooldetails)}`)
+      
       // if we have schooldetails data we are ready to render details page
       if(this.props.currentSchool){
+        console.log(this.props.currentSchool)
         let college = this.props.currentSchool[0];
         let schoolURL = 'http://'+college["school.school_url"]
       
