@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { refreshUser } from '../actions/User'
+import { refreshUser, deleteSchoolFromFavoriteList } from '../actions/User'
 
 import FavoriteList from '../components/FavoriteList'
 
@@ -14,7 +14,10 @@ const mapDispatchToProps = dispatch => {
   return {
     refreshUser: () => {
       dispatch(refreshUser())
-    }
+    },
+    deleteSchoolFromFavoriteList: (listID, school) => {
+      dispatch(deleteSchoolFromFavoriteList(listID, school))
+    },
   }
 }
 
