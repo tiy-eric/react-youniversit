@@ -22,7 +22,7 @@ class Navigation extends Component {
                 <Navbar.Header>
                 <Navbar.Brand>
 
-                    <Link className="linkText" to="/">YOUniversity</Link>
+                        <Link to="/"><h1 className="logostyle">YOUniversity</h1></Link>
 
                 </Navbar.Brand>
                 <Navbar.Toggle />

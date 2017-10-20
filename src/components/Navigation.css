@@ -3,7 +3,6 @@
 
 
 .logostyle {
-  
     color: #f6cc45;
     font-size: 20px;
     display: inline;
@@ -14,15 +13,7 @@
     font-family: 'Graduate', cursive;
 }
 
-#newuser {
-    display: grid;
-    padding: 1em;
-    background: #9eccc6;
-    border: 1px solid #c1c1c1;
-    margin: 2rem auto 0 auto;
-    max-width: 600px;
-    padding: 1em;
-}
+
 
 .navh1 {
     color: #f6cc45;
@@ -34,6 +25,16 @@
     font-size: 15px;
     display: inline;
     font-family: 'Graduate', cursive;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.signedin {
+    font-size: 10px;
+    display: inline;
+    font-family: 'Graduate', cursive;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .logoutlink {
