@@ -1,4 +1,18 @@
+
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Graduate');
+
+
+.logostyle {
+  
+    color: #f6cc45;
+    font-size: 20px;
+    display: inline;
+    margin-right: 30px;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: 'Graduate', cursive;
+
 
 #newuser {
     display: grid;
@@ -10,63 +24,30 @@
     padding: 1em;
 }
 
-#edituser {
-    display: grid;
-    padding: 1em;
-    background: #9eccc6;
-    border: 1px solid #c1c1c1;
-    margin: 2rem auto 0 auto;
-    max-width: 600px;
-    padding: 1em;
+.navh1 {
+    color: #f6cc45;
+    font-size: 20px;
+    display: inline;
 }
 
-form input {
-    background: #fff;
-    border: 1px solid #9c9c9c;
-    width: 100%;
+.navh4 {
+    font-size: 15px;
+    display: inline;
+    font-family: 'Graduate', cursive;
 }
 
+.logoutlink {
+   
+    font-size: 10px;
+    padding-bottom: 5px;
+    display: inline;
+    font-family: 'Graduate', cursive;
 
-#submit {
-    background: #47558b;
-    padding: 0.7em;
-    width: 100%;
-    border: 0;
-    color: white;
-    margin-top: 20px;
 }
 
-#submit:hover {
-    background: #427982;
-}
-
-label {
-    /* padding: 0.5em 0.5em 0.5em 0; */
-    margin: 0 0 0 4px;
-    padding: 0;
-}
-
-input {
-    padding: 0px;
-    margin-bottom: 0px;
-    width: 100%;
-}
-
-input:focus {
-    outline: 3px solid yellow;
-    width: 100%;
-}
-
-.form-group {
-    margin: 0 0 0 4px;
-}
-
-
-
-.selections{
-    width: 200px;
-}
-
+.navlink {
+    font-size: 15px;
+    display: inline;
 
 h4 {
     margin-top: 15px;
@@ -75,4 +56,5 @@ h4 {
 
 .linkText{
     font-family: 'Graduate', serif;
+
 }
