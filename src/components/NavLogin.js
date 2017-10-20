@@ -35,9 +35,6 @@ class NavLogin extends Component {
   
           return (
               <div>
-
-     
-
                 <Navbar.Brand>
                       <Link className="navh4" to="/searchresults">Search Results</Link>
                 </Navbar.Brand>
@@ -47,8 +44,8 @@ class NavLogin extends Component {
                 <Navbar.Brand>
                       <Link className="navh4" to="/favoritelist">Favorites</Link>
                 </Navbar.Brand>
-                <Navbar.Text pullRight >
-                      <p className="signedin">Signed in as: {user.firstName} {user.lastName}</p> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
+                <Navbar.Text pullRight className="signedin">
+                      Signed in as: {user.firstName} {user.lastName}<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">(Logout)</Navbar.Link>
                 </Navbar.Text>
             </div>
           )
@@ -67,10 +64,10 @@ class NavLogin extends Component {
                             <FormControl name="password" type="password" placeholder="password" />
                         </FormGroup>
                         {' '}
-                        <Button type="submit">Login</Button>
+                        <Button type="submit" id="backbutton">Login</Button>
                     </Navbar.Form>
                     <Navbar.Text pullRight>
-                        <Link to="/register">Create an Account</Link> or Login
+                        <Link to="/register" >Create an Account</Link> or Login
                     </Navbar.Text>
                 </form>
             </div>
