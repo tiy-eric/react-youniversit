@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Graduate');
+
+.details-container {
+    background-color: rgb(230, 223, 223)
+}
+
+.details-title {
+    text-align: center;
+    background-color: rgb(230, 223, 223)
+}
+
+.details-card {
+    height: 400px;
+    text-align: center;
+    background-color: rgb(230, 223, 223)
+}
+
+.details-card p {
+    font-size: 130%
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+.searchDashboard {
+    
+    width: 100%;
+    flex-flow: row nowrap;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+.preferences {
+    flex-flow: column nowrap;
+    display: inline-flex;
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 13%;
+    margin-top: 60px;
+}
+
+.searchTable {
+    flex-flow: column nowrap;
+    display: inline-flex;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    margin-top: -30px;
+}
+.favorites {
+    flex-flow: column nowrap;
+    display: inline-flex;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 13%;
+    margin-top: 60px;
+}
+.heading {
+    font-family: 'Graduate';
+    text-align: center;
+}
+
+.heading a {
+    font-family: 'Graduate';
+    text-align: center;
+    color:black;
+}
+
+.favorites h3, .preferences h3 {
+    font-size: 16px;
+}
+
+.itemTitle {
+line-height: 24px;
+}
+
+.item {
+    margin: 0;
+    line-height: 20px;
+}
+
+.favorites ol {
+    padding: 0;
+    padding-left: 15px;
+}
+
+
