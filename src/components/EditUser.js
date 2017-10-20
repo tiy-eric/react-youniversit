@@ -29,7 +29,8 @@ function FieldGroup({ id, label, help, ...props }) {
 class EditUser extends Component {
 
     currentLocations = this.props.currentUser.preferences.location.split(",");
-    currentMajors = this.props.currentUser.preferences.major.split(",");
+    currentMajors = this.props.currentUser.preferences.major;
+    // currentMajors = this.props.currentUser.preferences.major.split(",");
     //method to render the option values for a dropdown
     //used for states, cost, and majors
     renderOptions = (value, key) => {
@@ -177,7 +178,7 @@ class EditUser extends Component {
 
                         <label>Major</label>
                 <div className="form-group">
-                    <select defaultValue={this.currentMajors} multiple="true" name="major">
+                    <select defaultValue={this.currentMajors} name="major">
                         {majors.map(this.renderOptions)}
                     </select>
                 </div>

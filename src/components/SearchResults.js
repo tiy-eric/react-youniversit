@@ -19,6 +19,7 @@ let userListSize="";
 class SearchResults extends Component {
     data = [];
     user;
+
     localFavorites = new Array(0);
 
     componentDidMount(){
@@ -205,22 +206,17 @@ class SearchResults extends Component {
             <div className="container searchTable">
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 <TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>
-                <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='name' dataSort width={"200"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
+                <TableHeaderColumn row='0' colSpan='4'>Basic School Info</TableHeaderColumn>
+                <TableHeaderColumn row='1' dataField='name' dataSort width={"250"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='size' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
                 dataFormat={ this.formatFloat }>Size</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='location' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Location</TableHeaderColumn>
                 <TableHeaderColumn id="state" row='1' dataField='state' dataSort width={"80"} filter={ { type: 'TextFilter', delay: 400 } }>ST</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='admission' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Admission %</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='highestDegree' dataSort filter={ { type: 'TextFilter', delay: 400 } }>Highest Degree</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='schoolUrl' dataFormat={this.linkFormatter} dataSort filter={ { type: 'TextFilter', delay: 400 } }>School URL</TableHeaderColumn>
-                <TableHeaderColumn row='0' colSpan='3'>School Cost Information</TableHeaderColumn>
+                <TableHeaderColumn row='0' colSpan='2'>School Cost Information</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='inState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
                 dataFormat={ this.formatFloat }>In-State</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='outState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
                 dataFormat={ this.formatFloat }>Out-of-State</TableHeaderColumn>
-                <TableHeaderColumn row='1' dataField='netCost' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ this.formatFloat }>Avg Net</TableHeaderColumn>
               </BootstrapTable>
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>

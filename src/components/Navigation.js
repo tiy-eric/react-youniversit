@@ -21,7 +21,9 @@ class Navigation extends Component {
             < Navbar inverse fixedTop collapseOnSelect >
                 <Navbar.Header>
                 <Navbar.Brand>
-                        <Link to="/"><p className="logostyle"> YOUniversity</p></Link>
+
+                    <Link className="linkText" to="/">YOUniversity</Link>
+
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 </Navbar.Header>

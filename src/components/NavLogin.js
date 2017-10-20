@@ -3,7 +3,8 @@ import { NavItem, Navbar, FormGroup, FormControl, Button } from 'react-bootstrap
 import { Link, browserHistory } from 'react-router';
 
 import {User} from '../models/User'
-import "./Navigation.css"
+
+import './NavLogin.css'
 
 class NavLogin extends Component {
     
@@ -34,11 +35,17 @@ class NavLogin extends Component {
   
           return (
               <div>
-                <Navbar.Brand >
-                    <Link to="/searchresults"><h3 className="navlink">SearchResults</h3></Link>
+
+     
+
+                <Navbar.Brand>
+                    <Link className="linkText" to="/searchresults">Search Results</Link>
                 </Navbar.Brand>
                 <Navbar.Brand>
-                      <Link to="/edituser"><h3 className="navlink">Edit Preferences</h3></Link>
+                    <Link className="linkText" to="/edituser">Edit Preferences</Link>
+                </Navbar.Brand>
+                <Navbar.Brand>
+                    <Link to="/favoritelist">Favorites</Link>
                 </Navbar.Brand>
                 <Navbar.Text pullRight >
                       <h1 className="navh1">Signed in as: {user.firstName} {user.lastName}</h1> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
