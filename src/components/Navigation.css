@@ -12,7 +12,7 @@
     border-style: solid;
     border-width: 1px;
     font-family: 'Graduate', cursive;
-
+}
 
 #newuser {
     display: grid;
@@ -48,6 +48,7 @@
 .navlink {
     font-size: 15px;
     display: inline;
+}
 
 h4 {
     margin-top: 15px;
