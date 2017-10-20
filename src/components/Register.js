@@ -186,7 +186,7 @@ class Register extends Component {
         
                 <label>Location</label>
                 <div className="form-group">
-                    <select defaultValue={this.currentLocations} multiple="true" name="location">
+                    <select defaultValue={this.currentLocations} style={{ width: '40%' }} multiple="true" name="location">
                         {states.map(this.renderOptions)}
                     </select> 
                 </div>
