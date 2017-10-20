@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import {User} from '../models/User'
 
 import NavLoginContainer from '../containers/NavLogin'
-
+import "./Navigation.css"
 
 class Navigation extends Component {
 
@@ -18,10 +18,12 @@ class Navigation extends Component {
         // }
 
         return (
-            <Navbar inverse fixedTop collapseOnSelect>
+            < Navbar inverse fixedTop collapseOnSelect >
                 <Navbar.Header>
                 <Navbar.Brand>
+
                     <Link className="linkText" to="/">YOUniversity</Link>
+
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 </Navbar.Header>

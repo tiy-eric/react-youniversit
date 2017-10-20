@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { login, logout } from '../actions/User'
 
 import NavLogin from '../components/NavLogin'
+import "../components/Navigation.css"
 
 const mapStateToProps = state => {
   return {
