@@ -48,7 +48,7 @@ class NavLogin extends Component {
                       <Link className="navh4" to="/favoritelist">Favorites</Link>
                 </Navbar.Brand>
                 <Navbar.Text pullRight >
-                      <h1 className="signedin">Signed in as: {user.firstName} {user.lastName}</h1> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
+                      <p className="signedin">Signed in as: {user.firstName} {user.lastName}</p> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
                 </Navbar.Text>
             </div>
           )
