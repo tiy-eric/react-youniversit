@@ -39,16 +39,16 @@ class NavLogin extends Component {
      
 
                 <Navbar.Brand>
-                    <Link className="linkText" to="/searchresults">Search Results</Link>
+                      <Link className="navh4" to="/searchresults">Search Results</Link>
                 </Navbar.Brand>
                 <Navbar.Brand>
-                    <Link className="linkText" to="/edituser">Edit Preferences</Link>
+                      <Link className="navh4" to="/edituser">Edit Preferences</Link>
                 </Navbar.Brand>
                 <Navbar.Brand>
-                    <Link to="/favoritelist">Favorites</Link>
+                      <Link className="navh4" to="/favoritelist">Favorites</Link>
                 </Navbar.Brand>
                 <Navbar.Text pullRight >
-                      <h1 className="navh1">Signed in as: {user.firstName} {user.lastName}</h1> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
+                      <h1 className="signedin">Signed in as: {user.firstName} {user.lastName}</h1> <h4 className="navh4">(<Navbar.Link onClick={this.logoutUser} href="#" className="logoutlink">Logout</Navbar.Link>)</h4>
                 </Navbar.Text>
             </div>
           )
