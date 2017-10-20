@@ -112,7 +112,12 @@ class SearchResults extends Component {
     }
 
     formatFloat(cell, row) {
-        return parseFloat(cell);
+        return cell.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+
+    }
+
+    formatCurrency(cell, row) {
+        return "$"+cell.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
     }
 
     selectRowProp = {
@@ -200,11 +205,12 @@ class SearchResults extends Component {
                   </div>
             <div className="container searchTable">
                 <div className="instructions">
-                <p class="tip"><span className="glyphicon glyphicon-arrow-right"></span>TIP: Click Favorites section heading to open your Favorites List</p>
-                <p class="tip"><span className="glyphicon glyphicon-arrow-down"></span>TIP: Click checkbox to add a school to your Favorites List</p>
+                <p className="tip"><span className="glyphicon glyphicon-arrow-right"></span>TIP: Click Favorites section heading to open your Favorites List</p>
+                <p className="tip"><span className="glyphicon glyphicon-arrow-down"></span>TIP: Utilize NONE, ONE, or ALL filters below to find your prospective schools</p>
+                <p className="tip"><span className="glyphicon glyphicon-arrow-down"></span>TIP: Click checkbox to add a school to your Favorites List</p>
                 </div>
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
-                <TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>
+                <TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'55'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='4'>Basic School Info</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='name' dataSort width={"250"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='size' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
@@ -213,9 +219,9 @@ class SearchResults extends Component {
                 <TableHeaderColumn row='1' dataField='schoolUrl' dataFormat={this.linkFormatter} dataSort filter={ { type: 'TextFilter', delay: 400 } }>School URL</TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='2'>School Cost Information</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='inState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ this.formatFloat }>In-State</TableHeaderColumn>
+                dataFormat={ this.formatCurrency }>In-State</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='outState' dataSort filter={ { type: 'NumberFilter', delay: 400, numberComparators: [ '=', '>', '<' ] } }
-                dataFormat={ this.formatFloat }>Out-of-State</TableHeaderColumn>
+                dataFormat={ this.formatCurrency }>Out-of-State</TableHeaderColumn>
               </BootstrapTable>
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>
