@@ -1,24 +1,24 @@
-// import { connect } from 'react-redux'
-// import { addSchoolToFavoriteList } from "../actions/User";
+import { connect } from 'react-redux'
+import { refreshUser } from '../actions/User'
 
-// import FavoriteList from '../components/FavoriteList'
+import FavoriteList from '../components/FavoriteList'
 
-// const mapStateToProps = state => {
-//   return {
-//     currentUser: state.user.currentUser,
-//     favorites: state.school.favorites
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    currentUser: state.user.currentUser,
+    userRefreshed: state.user.refreshUser,
+  }
+}
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addSchoolToFavoriteList: (listID, school) => {
-//       dispatch(addSchoolToFavoriteList(listID, school))
-//     }
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    refreshUser: () => {
+      dispatch(refreshUser())
+    }
+  }
+}
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(FavoriteList)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FavoriteList)

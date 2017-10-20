@@ -20,6 +20,7 @@ class SearchResults extends Component {
     data = [];
     user;
     localFavorites = new Array(10);
+    
 
     componentDidMount(){
         if(this.props.currentUser.id){
