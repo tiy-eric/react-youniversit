@@ -42,6 +42,7 @@
     width: 100%;
     margin-top: 50px;
     background-color: rgb(158, 204, 198);
+    color: #222;
 }
 
 .searchTable {
@@ -50,7 +51,6 @@
     width: 80%;
     margin: 0;
     padding: 0;
-    margin-top: -30px;
     padding-left: 20px;
 }
 .favorites {
@@ -93,7 +93,7 @@ font-family: 'Graduate', serif;
 
 .favorites ol {
     padding: 0;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 button.btn.btn-success.react-bs-table-csv-btn.hidden-print {
@@ -105,3 +105,23 @@ button.btn.btn-success.react-bs-table-csv-btn.hidden-print:hover {
     background-color:  #427982;
 }
 
+.tip {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.favoriteLink {
+    color: #222;
+
+}
+
+.favoriteLink:hover{
+    color:#222;
+    text-decoration:none;
+    
+}
+
+.instructions{
+    margin-bottom: 30px;
+    margin-top: -40px;
+}

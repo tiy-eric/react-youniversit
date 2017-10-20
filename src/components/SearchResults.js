@@ -105,15 +105,10 @@ class SearchResults extends Component {
       }
 
       onSelectAll(isSelected, rows) {
-        alert(`is select all: ${isSelected}`);
         if (isSelected) {
-            alert('Current display and selected data: ');
-        } else {
-            alert('unselect rows: ');
-        }
-        for (let i = 0; i < rows.length; i++) {
-            alert(rows[i].id);
-        }
+            alert('Select All not currently supported, please deselect and select each individual school to add to your Favorites List');
+        } 
+       
     }
 
     formatFloat(cell, row) {
@@ -204,6 +199,10 @@ class SearchResults extends Component {
                   <h3 className="item">{this.user.preferences.location}</h3>
                   </div>
             <div className="container searchTable">
+                <div className="instructions">
+                <p class="tip"><span className="glyphicon glyphicon-arrow-right"></span>TIP: Click Favorites section heading to open your Favorites List</p>
+                <p class="tip"><span className="glyphicon glyphicon-arrow-down"></span>TIP: Click checkbox to add a school to your Favorites List</p>
+                </div>
               <BootstrapTable ref="searchResultTable" data={ this.data } selectRow={ this.selectRowProp } search exportCSV={ true } pagination striped>
                 <TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>
                 <TableHeaderColumn row='0' colSpan='4'>Basic School Info</TableHeaderColumn>
@@ -220,14 +219,16 @@ class SearchResults extends Component {
               </BootstrapTable>
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>
-            <div className="favorites">
-            <h2 className="heading"><a href="http://www.google.com">Your Favorites</a></h2><br />
+            <a href="/favoritelist" className="favoriteLink">
+                <div className="favorites" href="/favoriteList">
+            <h2 className="heading">Your Favorites</h2><br />
 
             <ol className = "topTen">
               {favorites}
             </ol>
-   
+            
             </div>
+            </a>
             </div>
       
           );
