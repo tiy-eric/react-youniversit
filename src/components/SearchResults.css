@@ -35,22 +35,23 @@
 }
 
 .preferences {
-    flex-flow: column nowrap;
-    display: inline-flex;
+    flex-flow: row nowrap;
+    display: flex;
     margin: 0;
     padding-right: 15px;
-    padding-left: 15px;
-    width: 13%;
+    padding-left: 45px;
+    width: 100%;
     margin-top: 60px;
 }
 
 .searchTable {
     flex-flow: column nowrap;
     display: inline-flex;
-    width: 70%;
+    width: 80%;
     margin: 0;
     padding: 0;
     margin-top: -30px;
+    padding-left: 20px;
 }
 .favorites {
     flex-flow: column nowrap;
@@ -58,8 +59,7 @@
     margin: 0;
     padding-left: 15px;
     padding-right: 15px;
-    width: 13%;
-    margin-top: 60px;
+    width: 18%;
 }
 .heading {
     font-family: 'Graduate';
@@ -78,11 +78,17 @@
 
 .itemTitle {
 line-height: 24px;
+margin-left: 60px;
+padding-top: 7px;
+font-family: 'Graduate', serif;
 }
 
 .item {
     margin: 0;
-    line-height: 20px;
+    line-height: 24px;
+    text-decoration: underline;
+    padding-top: 26.5px;
+    padding-left: 20px;
 }
 
 .favorites ol {
@@ -90,4 +96,12 @@ line-height: 24px;
     padding-left: 15px;
 }
 
+button.btn.btn-success.react-bs-table-csv-btn.hidden-print {
+    background-color: rgb(158, 204, 198);
+    border: #427982; 
+}
+
+button.btn.btn-success.react-bs-table-csv-btn.hidden-print:hover {
+    background-color:  #427982;
+}
 

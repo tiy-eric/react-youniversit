@@ -74,7 +74,7 @@ componentDidMount() {
                 <p>Website URL: <a href={schoolURL} target="_blank">{college["school.school_url"]}</a></p>
                 <p>State:  {college["school.state"]}</p>
                 <p>City:  {college["school.city"]}</p>
-                <p>School size (Enrollement):  {college["2015.student.size"]}</p>
+                <p>School size (Enrollement):  {new Intl.NumberFormat().format(college["2015.student.size"])}</p>
                 <p>Highest Degree Offered:  {getDegree[college["school.degrees_awarded.highest"]]}</p>
                 <p>Predominant Degree Offered:  {getPredominant[college["school.degrees_awarded.predominant"]]}</p>
                 <p>Institution Type:  {getOwnership[college["school.ownership"]]}</p>
@@ -87,19 +87,19 @@ componentDidMount() {
                 <p>Percentage Men: {Math.round((college["2015.student.demographics.men"])*100)}%</p>
                 <p>Average SAT Score: {college["2015.admissions.sat_scores.average.overall"]}</p>
                 <p>Acceptence Rate: {Math.round((college["2015.admissions.admission_rate.overall"])*100)}%</p>
-                <p>Number of Grad Students: {college["2015.student.grad_students"]}</p>
+                <p>Number of Grad Students: {new Intl.NumberFormat().format(college["2015.student.grad_students"])}</p>
                 <p>Retention Rate: {Math.round((college["2015.student.retention_rate.four_year.full_time"])*100)}%</p>
                 <p>Completion Rate: {Math.round((college["2015.completion.completion_rate_4yr_150nt"])*100)}%</p>
-                <p>Median Family Income: ${college["2015.student.demographics.median_family_income"]}</p>
+                <p>Median Family Income: ${new Intl.NumberFormat().format(college["2015.student.demographics.median_family_income"])}</p>
               </Col>
 
               <Col sm={12} md={6} lg={6} className="financial-data details-card">
                 <h2>Financial Data</h2>
-                <p>Tuition In-State: ${college["2015.cost.tuition.in_state"]}</p>
-                <p>Tuition Out-of-State: ${college["2015.cost.tuition.out_of_state"]}</p>
-                <p>Cost of Attendance: ${college["2015.cost.attendance.academic_year"]}</p>
-                <p>Average Net Price: ${college["2015.cost.avg_net_price.overall"]}</p>
-                <p>Average Debt Upon Completion: ${college["2015.aid.median_debt.completers.overall"]}</p>
+                <p>Tuition In-State: ${new Intl.NumberFormat().format(college["2015.cost.tuition.in_state"])}</p>
+                <p>Tuition Out-of-State: ${new Intl.NumberFormat().format(college["2015.cost.tuition.out_of_state"])}</p>
+                <p>Cost of Attendance: ${new Intl.NumberFormat().format(college["2015.cost.attendance.academic_year"])}</p>
+                <p>Average Net Price: ${new Intl.NumberFormat().format(college["2015.cost.avg_net_price.overall"])}</p>
+                <p>Average Debt Upon Completion: ${new Intl.NumberFormat().format(college["2015.aid.median_debt.completers.overall"])}</p>
                 <p>Percentage of Students with Federal Loans: {Math.round((college["2015.aid.federal_loan_rate"])*100)}%</p>
                 <p>Percentage of Students with Pell Grants: {Math.round((college["2015.aid.pell_grant_rate"])*100)}%</p>
               </Col>
@@ -116,24 +116,24 @@ componentDidMount() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>$0 to $30000</td>
-                        <td>${(college["2015.cost.net_price.public.by_income_level.0-30000"]) ? college["2015.cost.net_price.public.by_income_level.0-30000"] : college["2015.cost.net_price.private.by_income_level.0-30000"]}</td>
+                        <td>$0 to $30,000</td>
+                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.0-30000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.0-30000"]) : college["2015.cost.net_price.private.by_income_level.0-30000"]}</td>
                       </tr>
                       <tr>
-                        <td>$300001 to $48000</td>
-                        <td>${(college["2015.cost.net_price.public.by_income_level.30001-48000"]) ? college["2015.cost.net_price.public.by_income_level.30001-48000"] : college["2015.cost.net_price.private.by_income_level.30001-48000"]}</td>
+                        <td>$300,001 to $48,000</td>
+                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.30001-48000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.30001-48000"]) : college["2015.cost.net_price.private.by_income_level.30001-48000"]}</td>
                       </tr>
                       <tr>
-                        <td>$48001 to $75000</td>
-                        <td>${(college["2015.cost.net_price.public.by_income_level.48001-75000"]) ? college["2015.cost.net_price.public.by_income_level.48001-75000"] : college["2015.cost.net_price.private.by_income_level.48001-75000"]}</td>
+                        <td>$48,001 to $75,000</td>
+                        <td>${(new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.48001-75000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.48001-75000"]) : college["2015.cost.net_price.private.by_income_level.48001-75000"]}</td>
                       </tr>
                       <tr>
-                        <td>$75000 to $110000</td>
-                        <td>${(college["2015.cost.net_price.public.by_income_level.75001-110000"]) ? college["2015.cost.net_price.public.by_income_level.75001-110000"] : college["2015.cost.net_price.private.by_income_level.75001-110000"]}</td>
+                        <td>$75,000 to $110,000</td>
+                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.75001-110000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.75001-110000"]) : college["2015.cost.net_price.private.by_income_level.75001-110000"]}</td>
                       </tr>
                       <tr>
-                        <td>More than $110000</td>
-                        <td>${(college["2015.cost.net_price.public.by_income_level.110001-plus"]) ? college["2015.cost.net_price.public.by_income_level.110001-plus"] : college["2015.cost.net_price.private.by_income_level.110001-plus"]}</td>
+                        <td>More than $110,000</td>
+                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.110001-plus"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.110001-plus"]) : college["2015.cost.net_price.private.by_income_level.110001-plus"]}</td>
                       </tr>
                     </tbody>
                   </table>
