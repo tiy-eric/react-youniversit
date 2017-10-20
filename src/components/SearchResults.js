@@ -221,7 +221,7 @@ class SearchResults extends Component {
               <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
             </div>
             <div className="favorites">
-            <h2 className="heading"><a href="http://www.google.com">Top Ten</a></h2><br />
+            <h2 className="heading"><a href="http://www.google.com">Your Favorites</a></h2><br />
 
             <ol className = "topTen">
               {favorites}
