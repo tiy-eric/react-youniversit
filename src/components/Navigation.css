@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Graduate');
+
 #newuser {
     display: grid;
     padding: 1em;
@@ -69,4 +71,8 @@ input:focus {
 h4 {
     margin-top: 15px;
     margin-bottom: 5px;
+}
+
+.linkText{
+    font-family: 'Graduate', serif;
 }

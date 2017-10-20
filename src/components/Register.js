@@ -179,7 +179,7 @@ class Register extends Component {
 
             <label>Major</label>
                 <div className="form-group">
-                    <select defaultValue={this.currentMajors} multiple="true" name="major">
+                    <select defaultValue={this.currentMajors} name="major">
                         {majors.map(this.renderOptions)}
                     </select>
                 </div>
