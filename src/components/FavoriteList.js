@@ -6,6 +6,8 @@ import { Link } from 'react-router';
 import { School } from '../models/School'
 import "./FavoriteList.css"
 
+let userListID="";
+
 function onRowSelect(row, isSelected, e, rowIndex) {
     let rowStr = '';
     let schoolInfo = new School();
@@ -56,15 +58,31 @@ function formatFloat(cell, row) {
     return parseFloat(cell);
 }
 
+
+
+
 class FavoriteList extends Component {
     data = [];
 
     componentDidMount(){
         if(this.props.currentUser.id){
             let user = this.props.currentUser;
+            userListID = user.schoolList.id;
         }
         
     }
+
+    deleteFavoriteSchool = (event) => {
+        // event.preventDefault ();
+        let schoolToDelete = event.target.id
+        console.log(schoolToDelete)
+        console.log(userListID)
+
+        this.props.deleteSchoolFromFavoriteList(userListID, schoolToDelete);
+
+    }
+    
+    
 
     linkFormatter(cell, row) {
         return '<a href="http://'+cell+'" target="_blank">'+cell+'</a>';
@@ -72,6 +90,13 @@ class FavoriteList extends Component {
 
     internalLinkFormatter(cell, row) {
         return '<a href=schooldetails/'+cell+' target="_blank">Details</a>';
+    }
+
+    
+
+
+    buttonFormatter = (cell, row) => {
+        return <Button id={cell} bsStyle="danger" bsSize="xsmall" onClick={this.deleteFavoriteSchool} >Delete</Button>;
     }
 
     render() {
@@ -87,6 +112,7 @@ class FavoriteList extends Component {
       
                 return { 
                   id: school.schoolApiId,
+                  favSchoolId: school.id,
                   name: school.schoolName,
                   netCost: temp,
                   inState: school.inState,
@@ -108,6 +134,7 @@ class FavoriteList extends Component {
             
             <div className="container favoriteTable">
               <BootstrapTable data={ this.data } search exportCSV={ true } pagination striped>
+                {<TableHeaderColumn row='0' rowSpan='2' dataField='favSchoolId' width={'65'} dataFormat={this.buttonFormatter}></TableHeaderColumn>}
                 {<TableHeaderColumn row='0' rowSpan='2' dataField='id' isKey={ true } width={'50'} dataFormat={this.internalLinkFormatter}></TableHeaderColumn>}
                 <TableHeaderColumn row='0' colSpan='7'>Basic School Info</TableHeaderColumn>
                 <TableHeaderColumn row='1' dataField='name' dataSort width={"300"} filter={ { type: 'TextFilter', delay: 400 } }>Name</TableHeaderColumn>
