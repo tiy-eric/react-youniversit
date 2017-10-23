@@ -7,6 +7,7 @@ const mapStateToProps = state => {
   return {
     currentUser: state.user.currentUser,
     userRefreshed: state.user.refreshUser,
+    deletedSchool: state.user.deletedSchool
   }
 }
 
