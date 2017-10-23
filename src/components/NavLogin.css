@@ -7,3 +7,98 @@
     color: #9c9c9c;
 }
 
+.createAccount {
+    font-family: 'Graduate', serif;
+    color: #f6cc45;
+    font-size: 18px;
+}
+
+.createAccount:hover {
+    color: #9eccc6;
+}
+
+.loginOption {
+    color: #9d9d9d;
+    font-family: 'Graduate', serif;
+    margin-left: 10px;
+}
+
+.userLogin {
+    margin-top: 15px;
+}
+
+
+@media only screen and (min-width: 768px), screen and (max-width: 868px){
+    .createAccount {
+        font-size: 12px;
+    }
+    .loginOption {
+        font-size: 10px;
+        margin-top: -20px;
+        text-align: right;
+    }
+    .userOption{
+        display: flex;
+        flex-direction: column;
+        margin-top: -40px;
+
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .createAccount {
+        font-size: 18px;
+    }
+    .loginOption {
+        font-size: 16px;
+        /* margin-top: -20px; */
+        /* text-align: right; */
+    }
+    .userOption{
+        display: inline;
+        /* flex-direction: column; */
+        margin-top: -35px;
+        text-align: right;
+
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .createAccount {
+        font-size: 18px;
+    }
+    .loginOption {
+        font-size: 16px;
+        /* margin-top: -20px; */
+        /* text-align: right; */
+    }
+    .userOption{
+        display: inline;
+        /* flex-direction: column; */
+        margin-top: 15px;
+        text-align: right;
+
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .createAccount {
+        font-size: 18px;
+        margin-top: -150px;
+    }
+    .loginOption {
+        font-size: 20px;
+        margin-top: -150px;
+        text-align: left;
+        /* margin-left: 200px; */
+    }
+    .userOption{
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        
+    }
+    .userLogin{
+        margin-top: 75px;
+    }
+}

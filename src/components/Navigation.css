@@ -4,7 +4,8 @@
 
 .logostyle {
     color: #f6cc45;
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 40px;
     display: inline;
     margin-right: 30px;
     padding: 3px;
@@ -13,7 +14,14 @@
     font-family: 'Graduate', cursive;
 }
 
+.logoSub {
+    font-size: 22px;
+    font-family: 'Graduate', serif;
+}
 
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    line-height: 40px;
+}
 
 .navh1 {
     color: #f6cc45;
@@ -60,3 +68,9 @@ h4 {
     font-family: 'Graduate', serif;
 
 }
+
+.navWindow{
+    background-color:#222;
+    border-color: #222;
+}
+

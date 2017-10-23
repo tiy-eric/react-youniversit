@@ -18,11 +18,11 @@ class Navigation extends Component {
         // }
 
         return (
-            < Navbar inverse fixedTop collapseOnSelect >
+            < Navbar inverse fixedTop collapseOnSelect className="navWindow">
                 <Navbar.Header>
                 <Navbar.Brand>
 
-                        <Link to="/"><h1 className="logostyle">YOUniversity</h1></Link>
+                        <Link to="/"><h1 className="logostyle">YOU<span className="logoSub">niversity</span></h1></Link>
 
                 </Navbar.Brand>
                 <Navbar.Toggle />
