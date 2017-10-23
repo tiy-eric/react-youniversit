@@ -11,24 +11,55 @@
 .carousel-image {
     width: 100%;
     margin: 0;
-
+}
+.carousel-indicators li {
+    opacity: 0;
 }
 
 #marketing {
-    margin-bottom: 50px;
+    margin-top: 75px;
 }
 
-/* .caption {
+.marketingItem{
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.subtitle {
+    font-size: 24px;
+}
+
+
+.caption {
     margin: 0;
     padding: 0;
-    margin-bottom: 400px;
     text-shadow: .5px 1px gray;
-    color: black;
+    color: #222;
     font-family: 'Crimson Text', serif;
     background-color: white;
     opacity: 0.8;
-    border-radius: 15px;
-} */
+    z-index: 1;
+    /* border-radius: 15px; */
+    margin-bottom: 80px;
+}
+
+.bigLogoText {
+    font-family: 'Graduate', cursive;
+    font-size: 65px;
+    color: #222;
+    opacity: 1.0;
+    flex: 1;
+    z-index: 2;
+}
+
+.logoText {
+    font-family: 'Graduate', cursive;
+    font-size: 50px;
+    color: #222;
+    display: inline;
+    opacity: 1.0;
+    z-index: 2;
+}
 
 /* .caption h1 {
     margin-bottom: 40px;
@@ -57,17 +88,8 @@
 }
 
 
-.bigLogoText {
-    font-family: 'Graduate', cursive;
-    font-size: 50px;
-  flex: 1;
-}
+ */
 
-.logoText {
-    font-family: 'Graduate', cursive;
-    font-size: 65px;
-    display: inline;
-} */
 
 
 
@@ -76,23 +98,41 @@
     #carousel-college.carousel.slide{
         margin-top: 54px;
     }
-    
+
 }
 
 @media only screen and (min-width: 768px), screen and (max-width: 868px){
     #carousel-college.carousel.slide{
         margin-top: 54px;
     }
+ 
 }
 
 @media only screen and (min-width: 1200px){
     #carousel-college.carousel.slide{
         margin-top: 34px;
     }
+    .caption{
+        margin-bottom: 150px;
+    }
 }
-
+@media only screen and (max-width: 1199px) {
+    #carousel-college.carousel.slide{
+        margin-top: 36px;
+    }
+    .caption{
+        margin-bottom: 60px;
+    }
+}
 @media only screen and (max-width: 767px){
     #carousel-college.carousel.slide{
         margin-top: 34px;
     }
+    .caption{
+        margin-bottom: 25px;
+    }
 }
+
+@media all and (max-width: 600px) {
+    .caption {display:none;}
+    }
