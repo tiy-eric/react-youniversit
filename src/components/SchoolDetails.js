@@ -117,23 +117,23 @@ componentDidMount() {
                     <tbody>
                       <tr>
                         <td>$0 to $30,000</td>
-                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.0-30000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.0-30000"]) : college["2015.cost.net_price.private.by_income_level.0-30000"]}</td>
+                        <td>${(college["2015.cost.net_price.public.by_income_level.0-30000"]) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.0-30000"]) : new Intl.NumberFormat().format(college["2015.cost.net_price.private.by_income_level.0-30000"])}</td>
                       </tr>
                       <tr>
                         <td>$300,001 to $48,000</td>
-                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.30001-48000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.30001-48000"]) : college["2015.cost.net_price.private.by_income_level.30001-48000"]}</td>
+                        <td>${(college["2015.cost.net_price.public.by_income_level.30001-48000"]) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.30001-48000"]) : new Intl.NumberFormat().format(college["2015.cost.net_price.private.by_income_level.30001-48000"])}</td>
                       </tr>
                       <tr>
                         <td>$48,001 to $75,000</td>
-                        <td>${(new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.48001-75000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.48001-75000"]) : college["2015.cost.net_price.private.by_income_level.48001-75000"]}</td>
+                        <td>${(college["2015.cost.net_price.public.by_income_level.48001-75000"]) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.48001-75000"]) : new Intl.NumberFormat().format(college["2015.cost.net_price.private.by_income_level.48001-75000"])}</td>
                       </tr>
                       <tr>
                         <td>$75,000 to $110,000</td>
-                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.75001-110000"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.75001-110000"]) : college["2015.cost.net_price.private.by_income_level.75001-110000"]}</td>
+                        <td>${(college["2015.cost.net_price.public.by_income_level.75001-110000"]) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.75001-110000"]) : new Intl.NumberFormat().format(college["2015.cost.net_price.private.by_income_level.75001-110000"])}</td>
                       </tr>
                       <tr>
                         <td>More than $110,000</td>
-                        <td>${new Intl.NumberFormat().format((college["2015.cost.net_price.public.by_income_level.110001-plus"])) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.110001-plus"]) : college["2015.cost.net_price.private.by_income_level.110001-plus"]}</td>
+                        <td>${(college["2015.cost.net_price.public.by_income_level.110001-plus"]) ? new Intl.NumberFormat().format(college["2015.cost.net_price.public.by_income_level.110001-plus"]) : new Intl.NumberFormat().format(college["2015.cost.net_price.private.by_income_level.110001-plus"])}</td>
                       </tr>
                     </tbody>
                   </table>
