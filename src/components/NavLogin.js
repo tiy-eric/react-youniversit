@@ -58,7 +58,7 @@ class NavLogin extends Component {
         return (
             <div>
                 <form onSubmit={this.loginUser}>
-                    <Navbar.Form pullRight >
+                    <Navbar.Form pullRight className="userLogin">
                         <FormGroup>
                             <FormControl name="username" type="text" placeholder="username" />
                         </FormGroup>
@@ -69,8 +69,9 @@ class NavLogin extends Component {
                         {' '}
                         <Button type="submit">Login</Button>
                     </Navbar.Form>
-                    <Navbar.Text pullRight>
-                        <Link to="/register">Create an Account</Link> or Login
+                    <Navbar.Text pullRight className="userOption">
+                        <Link to="/register" className="createAccount">Create an Account</Link> 
+                        <span className="loginOption">or Login&nbsp;<span className="glyphicon glyphicon-arrow-right"></span></span>
                     </Navbar.Text>
                 </form>
             </div>
