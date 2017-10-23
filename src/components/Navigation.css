@@ -74,3 +74,6 @@ h4 {
     border-color: #222;
 }
 
+.navbar-header {
+    height: 70px;
+}
