@@ -25,7 +25,7 @@ const user = (state = {}, action) => {
             //may need to create new element to state for this but technically updating the user so may try to use existing state tool
             return newState;
         case "FAVORITE_DELETED":
-            newState.refreshUser = action.result;
+            newState.deletedSchool = action.result;
             // newState.schoolList = action.result;
             //may need to create new element to state for this but technically updating the user so may try to use existing state tool
             return newState;
