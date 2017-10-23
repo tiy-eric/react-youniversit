@@ -41,8 +41,10 @@
     margin: 0;
     width: 100%;
     margin-top: 50px;
-    background-color: rgb(158, 204, 198);
-    color: #222;
+    /* background-color: rgb(158, 204, 198); */
+    background-color: #222;
+    /* color: #9d9d9d; */
+    color: #f6cc45;
     padding-right: 70px;
 }
 
@@ -98,12 +100,16 @@ font-family: 'Graduate', serif;
 }
 
 button.btn.btn-success.react-bs-table-csv-btn.hidden-print {
-    background-color: rgb(158, 204, 198);
-    border: #427982; 
+    background-color: #222;
+    color: #f6cc45;
+    font-size: 16px;
+    border: #9d9d9d; 
+    box-shadow: 2px 2px 5px #9d9d9d;
 }
 
 button.btn.btn-success.react-bs-table-csv-btn.hidden-print:hover {
-    background-color:  #427982;
+    background-color:  #9d9d9d;
+    color: #222;
 }
 
 .tip {
