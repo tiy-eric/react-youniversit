@@ -119,6 +119,28 @@ export function addSchoolToFavoriteList(listID, school) {
     }
 }
 
+export function deleteSchoolFromFavoriteList(listID, school) {
+    
+    return dispatch => {
+        request.delete(`${baseUrl}/list/${listID}/delete/${school}`)
+        .set('Content-Type', 'application/json')
+        .withCredentials()
+        .send(school)
+        .end(
+            (error, response) => {
+                
+                if(error) {
+                    console.error("could not delete school from user's favorite list" + error);
+                    return;
+                }
+
+                dispatch({ type: 'FAVORITE_DELETED', result: response.body });
+
+            }
+        )
+    }
+}
+
 export function refreshUser() {
     
     return dispatch => {
