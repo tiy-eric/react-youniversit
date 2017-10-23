@@ -31,16 +31,18 @@
 @media only screen and (min-width: 768px), screen and (max-width: 868px){
     .createAccount {
         font-size: 12px;
+        margin-left: -50px;
     }
     .loginOption {
         font-size: 10px;
         margin-top: -20px;
         text-align: right;
+
     }
     .userOption{
         display: flex;
         flex-direction: column;
-        margin-top: -40px;
+
 
     }
 }
@@ -54,7 +56,6 @@
     }
     .userOption{
         display: inline;
-        margin-top: -35px;
         text-align: right;
 
     }
@@ -78,11 +79,12 @@
 @media only screen and (max-width: 767px){
     .createAccount {
         font-size: 18px;
-        margin-top: -150px;
+        margin-top: -200px;
+        margin-left: 5px;
     }
     .loginOption {
         font-size: 20px;
-        margin-top: -150px;
+        margin-top: -200px;
         text-align: left;
     }
     .userOption{
