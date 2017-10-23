@@ -173,7 +173,7 @@ class SearchResults extends Component {
         if(this.props.searchResults && Array.isArray(this.props.searchResults)){
             this.data = this.props.searchResults.map(
               school => {
-                let temp = parseInt(school['2015.cost.avg_net_price.public'])
+                let temp = parseInt(school['2015.cost.avg_net_price.overall'])
                 let nameLink = school['school.school_url']
       
                 return { 
