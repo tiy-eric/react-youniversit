@@ -17,8 +17,10 @@ class NavLogin extends Component {
         user.password = form.password.value
   
         this.props.login(user)
-        browserHistory.push('/searchresults');
-  
+            .then( result => {
+                browserHistory.push('/searchresults');
+            })
+        
     }
 
     logoutUser = event => {
@@ -29,7 +31,7 @@ class NavLogin extends Component {
   
     render() {
         
-        if(this.props.currentUser.id){
+        if(this.props.currentUser){
             
           let user = this.props.currentUser;
   

@@ -6,7 +6,7 @@ import { Carousel, Grid, Row, Col, Button } from 'react-bootstrap';
 class Home extends Component {
   render() {
     return (
-        <div id="main_carousel" class="carousel-slide row" data-ride="carousel">   
+        <div id="main_carousel" className="carousel-slide row" data-ride="carousel">   
             <Carousel id="carousel-college">
 
             <Carousel.Item className="carousel-image">
