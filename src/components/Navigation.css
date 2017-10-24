@@ -31,10 +31,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 
 .navh4 {
     font-size: 15px;
-    display: inline;
+    display: inline; 
     font-family: 'Graduate', cursive;
     margin-right: 20px;
     margin-left: 20px;
+
 }
 
 .signedin {
@@ -62,6 +63,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 h4 {
     margin-top: 15px;
     margin-bottom: 5px;
+ 
 }
 
 .linkText{
@@ -77,3 +79,40 @@ h4 {
 .navbar-header {
     height: 70px;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    .navh4 {
+        /* border: red 2px solid; */
+        margin-top: 10px;
+    }
+
+}
+        @media only screen and (min-width: 1200px) {
+        .navh4 {
+            /* border: red 2px solid; */
+            margin-top: 10px;
+        }
+        }
+    @media only screen and (min-width: 1320px) {
+    .navh4 {
+        /* border: red 2px solid; */
+        margin-top: 10px;
+    }
+
+}
+
+        @media only screen and (max-width: 1093px) {
+        .navh4 {
+            /* border:black 2px solid; */
+            margin-top: 10px;
+        }
+        .signedin {
+            display: none;
+        }
+        .preferences {
+            display: none;
+            visibility: hidden;
+        }
+        }
