@@ -198,7 +198,7 @@ class SearchResults extends Component {
               <div className="searchDashboard">
             
 
-              <footer className="footie navbar-fixed-bottom">
+              <footer className="footer navbar-fixed-bottom">
                   
                           <div className="preferences">
                               <h2 className="heading">Your Info </h2><br />

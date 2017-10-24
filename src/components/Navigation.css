@@ -42,8 +42,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
     font-size: 10px;
     display: inline;
     font-family: 'Graduate', cursive;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .logoutlink {
@@ -84,35 +84,38 @@ h4 {
 
 @media only screen and (max-width: 1200px) {
     .navh4 {
-        /* border: red 2px solid; */
         margin-top: 10px;
     }
 
 }
-        @media only screen and (min-width: 1200px) {
-        .navh4 {
-            /* border: red 2px solid; */
-            margin-top: 10px;
-        }
-        }
-    @media only screen and (min-width: 1320px) {
+@media only screen and (min-width: 1200px) {
     .navh4 {
-        /* border: red 2px solid; */
         margin-top: 10px;
     }
+}
+@media only screen and (max-width: 1320px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+        /* .signedin {
+            display: none;
+        } */
 
 }
 
-        @media only screen and (max-width: 1093px) {
-        .navh4 {
-            /* border:black 2px solid; */
-            margin-top: 10px;
-        }
-        .signedin {
-            display: none;
-        }
-        .preferences {
-            display: none;
-            visibility: hidden;
-        }
-        }
+@media only screen and (max-width: 1093px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+    .signedin {
+        display: none;
+    }
+ 
+}
+
+@media only screen and (max-width: 669px) {
+    .heading {
+        display: none;
+    }
+}
+
