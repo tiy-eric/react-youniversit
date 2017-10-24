@@ -23,7 +23,7 @@ class SearchResults extends Component {
     localFavorites = new Array(0);
 
     componentDidMount(){
-        if(this.props.currentUser.id){
+        if(this.props.currentUser){
             this.user = this.props.currentUser;
             // console.log(user);
             userListID = this.user.schoolList.id;
@@ -170,7 +170,7 @@ class SearchResults extends Component {
             43:"Rural: Remote"
         }
 
-        if(this.props.searchResults && Array.isArray(this.props.searchResults)){
+        if(this.props.searchResults && Array.isArray(this.props.searchResults) && this.user){
             this.data = this.props.searchResults.map(
               school => {
                 let temp = parseInt(school['2015.cost.avg_net_price.overall'])
