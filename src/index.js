@@ -22,6 +22,7 @@ import RegisterContainer from "./containers/Register";
 import SearchResultsContainer from "./containers/SearchResults";
 import EditUserContainer from "./containers/EditUser";
 import SchoolDetailsContainer from "./containers/SchoolDetails";
+import FavoriteList from "./containers/FavoriteList"
 
 //create the store with our reducers
 let store = createStore(reducer, applyMiddleware(thunk))
@@ -39,6 +40,7 @@ ReactDOM.render(
             <Route path="/register" component={RegisterContainer} />
             <Route path="/searchresults" component={SearchResultsContainer} />
             <Route path="/edituser" component={EditUserContainer} />
+            <Route path="/favoritelist" component={FavoriteList} />
             <Route path="schooldetails/:id" component={SchoolDetailsContainer}/>
         </Route>
       </Router>

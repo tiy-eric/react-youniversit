@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Graduate');
+
+
+.logostyle {
+    color: #f6cc45;
+    font-size: 30px;
+    line-height: 40px;
+    display: inline;
+    margin-right: 30px;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: 'Graduate', cursive;
+}
+
+.logoSub {
+    font-size: 22px;
+    font-family: 'Graduate', serif;
+}
+
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    line-height: 40px;
+}
+
+.navh1 {
+    color: #f6cc45;
+    font-size: 20px;
+    display: inline;
+}
+
+.navh4 {
+    font-size: 15px;
+    display: inline; 
+    font-family: 'Graduate', cursive;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+.signedin {
+    font-size: 10px;
+    display: inline;
+    font-family: 'Graduate', cursive;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.logoutlink {
+    margin-left: 20px;
+    font-size: 10px;
+    padding-bottom: 5px;
+    display: inline;
+    font-family: 'Graduate', cursive;
+
+}
+
+.navlink {
+    font-size: 15px;
+    display: inline;
+}
+
+h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+ 
+}
+
+.linkText{
+    font-family: 'Graduate', serif;
+
+}
+
+.navWindow{
+    background-color:#222;
+    border-color: #222;
+}
+
+.navbar-header {
+    height: 70px;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 1320px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+        /* .signedin {
+            display: none;
+        } */
+
+}
+
+@media only screen and (max-width: 1093px) {
+    .navh4 {
+        margin-top: 10px;
+    }
+    .signedin {
+        display: none;
+    }
+ 
+}
+
+@media only screen and (max-width: 669px) {
+    .heading {
+        display: none;
+    }
+}
+

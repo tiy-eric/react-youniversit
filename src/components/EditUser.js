@@ -4,6 +4,7 @@ import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel, Alert }
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
 import {Preferences} from '../models/Preferences'
+import './EditUser.css';
 
 //since we have a model the represents the preferences that need to be set
 //for each user, I use object.keys to get the properties on the object as an array for when 
@@ -28,7 +29,8 @@ function FieldGroup({ id, label, help, ...props }) {
 class EditUser extends Component {
 
     currentLocations = this.props.currentUser.preferences.location.split(",");
-    currentMajors = this.props.currentUser.preferences.major.split(",");
+    currentMajors = this.props.currentUser.preferences.major;
+    // currentMajors = this.props.currentUser.preferences.major.split(",");
     //method to render the option values for a dropdown
     //used for states, cost, and majors
     renderOptions = (value, key) => {
@@ -107,11 +109,15 @@ class EditUser extends Component {
     
     return (
         <div className="container">
+         
+            <Panel header="Update User" id="panel">
+            
             {statusMessage}
-            <Panel header="YOUniversity Update User">
-
-                <form onSubmit={this.handleFormSubmit}>
+            
+            <form onSubmit={this.handleFormSubmit} id="edituser">
+                
                 <input type="hidden" name="username" defaultValue={this.props.currentUser.username} />
+                <label><h4><b>User Information</b></h4> </label>
                 <FieldGroup
                     className="form-field"
                     id="formControlsFirstName"
@@ -140,21 +146,52 @@ class EditUser extends Component {
                     name="password"
                 />
                 
-                <label>Major</label>
+                <br />
+            {/* <label><h4><b>Preferences</b></h4> </label>
+
+            <table>
+                <thead>
+            <tr>
+                <th><label>States (select one or more)</label></th>
+                <th><label>Area of Study (select one)</label></th>
+            </tr>
+</thead>
+<tbody>
+            <tr>
+             <td>     
                 <div className="form-group">
-                    <select defaultValue={this.currentMajors} multiple="true" name="major">
+                <select defaultValue={this.currentLocations} multiple="true" name="location" className="selections">
+                    {states.map(this.renderOptions)}
+                </select> 
+                </div>
+              </td>
+              <td>
+                <div className="form-group">
+                   <select defaultValue={this.currentMajors} multiple="true" name="location" className="selections">
+                    {majors.map(this.renderOptions)}
+                    </select>
+                </div>      
+              </td>  
+            </tr>
+            </tbody>
+        </table> */}
+
+                        <label>Major</label>
+                <div className="form-group">
+                    <select defaultValue={this.currentMajors} name="major">
                         {majors.map(this.renderOptions)}
                     </select>
                 </div>
         
                 <label>Location</label>
                 <div className="form-group">
-                    <select defaultValue={this.currentLocations} multiple="true" name="location">
+                    <select defaultValue={this.currentLocations} style={{ width: '40%' }} multiple="true" name="location">
                         {states.map(this.renderOptions)}
                     </select> 
                 </div>
 
-                <Button  className="btn btn-default"type="submit">Create Profile</Button>
+
+                <Button  className="btn btn-default"type="submit" id="submit">Edit Profile</Button>
 
                 </form>
             </Panel>

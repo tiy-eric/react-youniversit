@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Graduate');
+
+.linkText{
+    font-family: 'Graduate', serif;
+    padding-right: 40px;
+    font-size: 16px;
+    color: #9c9c9c;
+}
+
+.createAccount {
+    font-family: 'Graduate', serif;
+    color: #f6cc45;
+    font-size: 18px;
+}
+
+.createAccount:hover {
+    color: #9eccc6;
+}
+
+.loginOption {
+    color: #9d9d9d;
+    font-family: 'Graduate', serif;
+    margin-left: 10px;
+}
+
+.userLogin {
+    margin-top: 15px;
+}
+
+
+@media only screen and (min-width: 768px), screen and (max-width: 868px){
+    .createAccount {
+        font-size: 12px;
+        margin-left: -50px;
+    }
+    .loginOption {
+        font-size: 10px;
+        margin-top: -20px;
+        text-align: right;
+
+    }
+    .userOption{
+        display: flex;
+        flex-direction: column;
+
+
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .createAccount {
+        font-size: 18px;
+    }
+    .loginOption {
+        font-size: 16px;
+    }
+    .userOption{
+        display: inline;
+        text-align: right;
+
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .createAccount {
+        font-size: 18px;
+    }
+    .loginOption {
+        font-size: 16px;
+    }
+    
+    .userOption{
+        display: inline;
+        margin-top: 15px;
+        text-align: right;
+
+    }
+@media only screen and (min-width: 1200px) {
+    .createAccount {
+        font-size: 18px;
+    }
+    .loginOption {
+        font-size: 16px;
+    }
+    .userOption {
+        display: inline;
+        margin-top: 15px;
+        text-align: right;
+    }
+}
+
+}
+
+@media only screen and (max-width: 767px){
+    .createAccount {
+        font-size: 18px;
+        margin-top: -200px;
+        margin-left: 5px;
+    }
+    .loginOption {
+        font-size: 20px;
+        margin-top: -200px;
+        text-align: left;
+    }
+    .userOption{
+        display: flex;
+        flex-direction: row;
+        height: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .userLogin{
+        margin-top: 75px;
+    }
+
+}
